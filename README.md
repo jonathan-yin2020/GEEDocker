@@ -1,7 +1,5 @@
 GEE repository: https://github.com/google/earthenterprise
 
-Feel free to use the opensource code, but if you take it to your repository, please fork and reference this repository :)
-
 # GEEDocker
 
 
@@ -40,12 +38,6 @@ cd fusion/tutorial
 bash install.sh
 ```
 \
-For the GEE fusion with ability to connect by ssh run:
-```sh
-cd fusion/ssh
-bash install.sh
-```
-** you should first edit the install.sh file and add your root password **
 
 
 # Running GEE
@@ -71,17 +63,13 @@ cd fusion/tutorial
 bash run.sh
 ```
 \
-Start fusion with ssh ability:
-```sh
-cd fusion/ssh
-bash run.sh
-```
-** you should first edit the run.sh file and choose local port for mapping **\
+
+
 \
-To start gee fusion (including tutorial), or server with bash entrypoint add --entrypoint flag:
+To start gee fusion or tutorial with bash entrypoint add --entrypoint flag:
 ```sh
 bash fusion/run.sh --entrypoint
-bash server/run.sh --entrypoint
+bash fusion/tutorial/run.sh --entrypoint
 ```
 
 

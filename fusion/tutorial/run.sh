@@ -18,7 +18,7 @@ do
 done
 
 if [ $ENTERYPOINT -eq 1 ]; then
-	docker run --rm -it --entrypoint /bin/bash --net host --env="DISPLAY" --privileged -v /gevol/fusion:/gevol/fusion -v /opt/google/share/tutorials/fusion:/opt/google/share/tutorials/fusion --name fusioncontainer fusiontutorial:v1
+	docker run --rm -it --entrypoint /bin/bash --net=host --env="DISPLAY" --privileged -v $HOME/.Xauthority:/root/.Xauthority:rw -v /gevol/fusion:/gevol/fusion -v /opt/google/share/tutorials/fusion:/opt/google/share/tutorials/fusion --name fusioncontainer fusiontutorial:v1
 else
-	docker run --rm --net host --env="DISPLAY" --privileged -v /gevol/fusion:/gevol/fusion -v /opt/google/share/tutorials/fusion:/opt/google/share/tutorials/fusion --name fusioncontainer fusiontutorial:v1 &
+	docker run --rm --net=host --env="DISPLAY" --privileged -v $HOME/.Xauthority:/root/.Xauthority:rw -v /gevol/fusion:/gevol/fusion -v /opt/google/share/tutorials/fusion:/opt/google/share/tutorials/fusion --name fusioncontainer fusiontutorial:v1 &
 fi
