@@ -1,8 +1,5 @@
 FROM geebuild:v1 AS base
 
-# Build arguments
-ARG ADMIN_PASSWORD
-
 # Copy entrypoint script
 COPY entrypoint.sh /entrypoint.sh
 
@@ -27,7 +24,7 @@ COPY --from=base / /
 RUN sed -i "s/#ServerName www.example.com:80/ServerName localhost/g" /opt/google/gehttpd/conf/gehttpd.conf
 
 # Set the admin password
-RUN echo "$ADMIN_PASSWORD\n$ADMIN_PASSWORD" | /opt/google/gehttpd/bin/htpasswd -c .htpasswd geapacheuser
+#RUN echo "$ADMIN_PASSWORD\n$ADMIN_PASSWORD" | /opt/google/gehttpd/bin/htpasswd -c .htpasswd geapacheuser
 
 # Declare a pgsql data volume
 VOLUME /var/opt/google/pgsql/data

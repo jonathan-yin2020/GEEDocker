@@ -11,4 +11,4 @@ if [[ $RESULT == "[]" ]]; then
 fi;
 
 # Build the image
-docker build --rm --build-arg ADMIN_PASSWORD=<your_password> -t geeserver:v1 -f Dockerfile .
+docker build --rm --build-arg -t geeserver:v1 -f Dockerfile .

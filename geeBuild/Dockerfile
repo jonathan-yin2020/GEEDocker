@@ -38,10 +38,6 @@ RUN apt-get update &&\
     python-dev python-imaging python-psycopg2 \
     python-setuptools python2.7 python2.7-dev python-lxml python-git \
     shunit2 swig xorg-dev zlib1g-dev
-RUN pip install --upgrade pip
-RUN pip install setuptools
-RUN pip install gcg
-RUN apt-get update
 
 # Clone GEE from repository
 RUN if test -e earthenterprise/earth_enterprise; then true; else git clone https://github.com/google/earthenterprise.git; fi
