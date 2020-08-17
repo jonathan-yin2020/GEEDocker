@@ -23,8 +23,6 @@ For the GEE server run:
 cd server
 bash install.sh
 ```
-** you should first edit the install.sh file and add your new admin password **\
-\
 \
 For the GEE fusion run:
 ```sh
@@ -37,8 +35,6 @@ For the GEE fusion with tutorial files run:
 cd fusion/tutorial
 bash install.sh
 ```
-\
-
 
 # Running GEE
 
@@ -62,9 +58,6 @@ Start fusion with tutorial:
 cd fusion/tutorial
 bash run.sh
 ```
-\
-
-
 \
 To start gee fusion or tutorial with bash entrypoint add --entrypoint flag:
 ```sh

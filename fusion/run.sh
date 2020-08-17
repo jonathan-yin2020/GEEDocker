@@ -1,6 +1,6 @@
 #!/bin/bash
 
-xhost +
+xhost +local:root
 
 # Default values of arguments
 ENTERYPOINT=0

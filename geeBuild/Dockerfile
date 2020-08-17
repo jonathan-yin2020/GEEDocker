@@ -56,7 +56,7 @@ RUN git lfs pull
 WORKDIR /opt/myapp/earthenterprise/earth_enterprise
 
 # Build GEE
-RUN scons -j3 release=1 build
+RUN scons -j4 release=1 build
 
 # Build the install package
-RUN scons -j3 release=1 stage_install
+RUN scons -j4 release=1 stage_install
