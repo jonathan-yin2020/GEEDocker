@@ -16,8 +16,8 @@ RUN echo C | bash install_fusion.sh
 RUN cp /opt/myapp/earthenterprise/earth_enterprise/tutorial/FusionTutorial/download_tutorial.sh /download_tutorial.sh
 
 # Remove build and server files
-RUN rm -frd /opt/myapp/earthenterprise &&\
-	rm -frd /tmp/fusion_os_install &&\
+RUN rm -rf /opt/myapp/earthenterprise &&\
+	rm -rf /tmp/fusion_os_install &&\
 	rm -d /gevol/src /gevol/assets
 
 FROM alpine
