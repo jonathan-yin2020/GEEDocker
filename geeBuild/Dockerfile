@@ -1,16 +1,8 @@
 FROM ubuntu:16.04
 
-ARG GEE_path=earthenterprise
-
 RUN mkdir -p /opt/myapp
 
 WORKDIR /opt/myapp
-
-# Copy path if exists
-COPY temp.txt $GEE_path* /opt/myapp/earthenterprise/
-
-# Remove temporary file
-RUN if test -e earthenterprise; then cd earthenterprise && rm temp.txt; else rm temp.txt; fi
 
 # Install GEE dependencies
 RUN apt-get update &&\
@@ -40,7 +32,7 @@ RUN apt-get update &&\
     shunit2 swig xorg-dev zlib1g-dev
 
 # Clone GEE from repository
-RUN if test -e earthenterprise/earth_enterprise; then true; else git clone https://github.com/google/earthenterprise.git; fi
+RUN git clone https://github.com/google/earthenterprise.git
 
 WORKDIR /opt/myapp/earthenterprise
 
