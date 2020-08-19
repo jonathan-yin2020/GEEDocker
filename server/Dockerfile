@@ -14,7 +14,7 @@ RUN apt-get update &&\
 RUN echo 'C\nn' | bash install_server.sh
 
 # Remove build files
-RUN rm -frd /opt/myapp/earthenterprise /tmp
+RUN rm -rf /opt/myapp/earthenterprise /tmp
 
 FROM alpine
 
