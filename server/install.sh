@@ -11,4 +11,4 @@ if [[ $RESULT == "[]" ]]; then
 fi;
 
 # Build the image
-docker build --rm --build-arg -t geeserver:v1 -f Dockerfile .
+docker build --rm -t geeserver:v1 -f Dockerfile .
