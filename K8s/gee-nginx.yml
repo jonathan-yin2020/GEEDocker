@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: open-gee
-          image: jyjl1314/geeserver:v1
+          image: 127.0.0.1:5000/geeserver:v1
           imagePullPolicy: IfNotPresent
           volumeMounts:
           - mountPath: "/opt/google/gehttpd/htdocs/cutter/globes/"
@@ -24,7 +24,7 @@ spec:
           - mountPath: "/var/opt/google/pgsql/data/"
             name: nfsvol2
         - name: nginx
-          image: jyjl1314/nginx-auth:v1
+          image: 127.0.0.1:5000/nginx-auth:v1
           imagePullPolicy: IfNotPresent
           ports:
           - containerPort: 8088
@@ -34,6 +34,8 @@ spec:
           - name: nginx-proxy-config
             mountPath: "/etc/nginx/nginx.conf"
             subPath: nginx.conf
+      imagePullSecrets:
+      - name: repocred
       volumes:
       - name: nfsvol
         persistentVolumeClaim:
@@ -69,6 +71,7 @@ data:
         include       /etc/nginx/mime.types;
         default_type  application/octet-stream;
 
+
         sendfile        on;
         keepalive_timeout  65;
 
@@ -84,7 +87,7 @@ data:
     }
 ---
 
-apiVersion: v1  
+apiVersion: v1
 kind: Service
 metadata:
   name: gee-service
